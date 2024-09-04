@@ -1,15 +1,20 @@
 // routes/index.js
 const express = require('express');
-const AppController = require('../controllers/AppController.js'); // Import the controller
-const UsersController = require('../controllers/UsersController.js');
+const AppController = require('../controllers/AppController'); // Import the controller
+//const UsersController = require('../controllers/UsersController');
 
 const router = express.Router();
 
-// Define routes
-router.get('/status', AppController.getStatus);
-router.get('/stats', AppController.getStats);
-
-// Define new route for creating a user
-router.post('/users', UsersController.postNew);
+const routeController = (app) => {
+    app.use('/', router);
+  
+    // App Controller
+    router.get('/status', (req, res) => {
+      AppController.getStatus(req, res);
+    });
+  
+    router.get('/stats', (req, res) => {
+      AppController.getStats(req, res);
+    });
 
 module.exports = router;
