@@ -1,6 +1,6 @@
 // routes/index.js
 const express = require('express');
-const AppController = require('../controllers/AppController'); // Import the controller
+const AppController = require('../controllers/AppController.js'); // Import the controller
 
 const router = express.Router();
 
