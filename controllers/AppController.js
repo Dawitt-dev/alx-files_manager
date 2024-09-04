@@ -1,6 +1,6 @@
 // controllers/AppController.js
-const redisClient = require('../utils/redisClient.js'); // Import the Redis client
-const dbClient = require('../utils/dbClient.js'); // Import the DB client (use appropriate DB client module)
+const redisClient = require('../utils/redis'); // Import the Redis client
+const dbClient = require('../utils/db'); // Import the DB client (use appropriate DB client module)
 
 const AppController = {
   async getStatus(req, res) {
